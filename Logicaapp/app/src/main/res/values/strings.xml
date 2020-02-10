@@ -6,4 +6,7 @@
     <string name="t">T</string>
     <string name="f">F</string>
     <string name="a_b">A ^ B</string>
+    <string name="confirm">Confirm</string>
+    <string name="correct">correct</string>
+    <string name="incorrect">incorrect</string>
 </resources>
