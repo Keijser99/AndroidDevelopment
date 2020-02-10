@@ -42,12 +42,13 @@ class HigherLowerActivity : AppCompatActivity() {
             4 -> ivDice.setImageResource(R.drawable.dice4)
             5 -> ivDice.setImageResource(R.drawable.dice5)
             6 -> ivDice.setImageResource(R.drawable.dice6)
-    }
+        }
 
-    /**
-     * Replaces the previous dice value with the current one and replaces the current dice with a new dice
-     * with a random number between 1 and 6 (inclusive).
-     */
+        /**
+         * Replaces the previous dice value with the current one and replaces the current dice with a new dice
+         * with a random number between 1 and 6 (inclusive).
+         */
+    }
     private fun rollDice() {
         lastThrow = currentThrow
         currentThrow = (1..6).random()
@@ -94,5 +95,4 @@ class HigherLowerActivity : AppCompatActivity() {
     private fun onAnswerIncorrect() {
         Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
     }
-
 }
