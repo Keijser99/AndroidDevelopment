@@ -10,15 +10,3 @@ data class Reminder(
     var reminderText: String
 )
 
-class ReminderAdapter {
-
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        fun bind(reminder: Reminder) {
-            itemView.tvReminder.text = reminder.reminderText
-        }
-
-    }
-
-}
-
