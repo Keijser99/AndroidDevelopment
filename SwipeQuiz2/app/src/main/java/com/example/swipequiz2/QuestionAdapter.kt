@@ -1,19 +1,19 @@
-package com.example.reminder
+package com.example.swipequiz2
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_reminder.view.*
-import layout.Reminder
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import kotlinx.android.synthetic.main.question_list_item.view.*
 
-class ReminderAdapter(private val reminders: List<Reminder>) : RecyclerView.Adapter<ReminderAdapter.ViewHolder>() {
+class QuestionsAdapter(private val questions: List<Questions>) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(reminder: Reminder) {
-            itemView.tvReminder.text = reminder.reminderText
+        fun bind(question: Questions) {
+            itemView.tvQuestions.text = question.questions
         }
     }
 
@@ -22,7 +22,7 @@ class ReminderAdapter(private val reminders: List<Reminder>) : RecyclerView.Adap
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_reminder, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.question_list_item, parent, false)
         )
     }
 
@@ -30,13 +30,13 @@ class ReminderAdapter(private val reminders: List<Reminder>) : RecyclerView.Adap
      * Returns the size of the list
      */
     override fun getItemCount(): Int {
-        return reminders.size
+        return questions.size
     }
 
     /**
      * Called by RecyclerView to display the data at the specified position.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(reminders[position])
+        holder.bind(questions[position])
     }
 }
