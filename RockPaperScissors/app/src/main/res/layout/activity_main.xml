@@ -1,25 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:background="@color/StandardColour"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="?actionBarSize"
+            android:background="@color/StandardColour"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <TextView
+        android:id="@+id/tvGreetings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/welcome"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <TextView
+        android:id="@+id/tvInstructionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:text="@string/select_rock_paper_scissor_to_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGreetings" />
+
+    <TextView
+        android:id="@+id/tvDiversionBar"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/StandardColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInstructionText" />
+
+    <ImageView
+        android:id="@+id/btnPaper"
+        android:layout_width="0dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/StandardColour"
+        android:contentDescription="@string/paperbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnScissors"
+        app:layout_constraintStart_toEndOf="@+id/btnRock"
+        app:layout_constraintTop_toTopOf="@+id/btnScissors"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/paper" />
+
+    <ImageView
+        android:id="@+id/btnScissors"
+        android:layout_width="0dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/StandardColour"
+        android:contentDescription="@string/sciccorsbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnPaper"
+        app:srcCompat="@drawable/scissors" />
+
+    <ImageView
+        android:id="@+id/btnRock"
+        android:layout_width="0dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/StandardColour"
+        android:contentDescription="@string/rockbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPaper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnPaper"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/rock" />
+
+    <TextView
+        android:id="@+id/tvResultSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiversionBar" />
+
+    <ImageView
+        android:id="@+id/ivComp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="35dp"
+        android:background="@color/AltStandardColour"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvResultSection"
+        app:srcCompat="@drawable/paper" />
+
+    <TextView
+        android:id="@+id/tvVersusText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/vs"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ivYou"
+        app:layout_constraintStart_toEndOf="@+id/ivComp"
+        app:layout_constraintTop_toTopOf="@id/ivComp" />
+
+    <ImageView
+        android:id="@+id/ivYou"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="60dp"
+        android:background="@color/AltStandardColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvVersusText"
+        app:srcCompat="@drawable/rock"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/tvComp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/computer"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/ivComp"
+        app:layout_constraintTop_toBottomOf="@id/ivComp"
+        app:layout_constraintStart_toStartOf="@id/ivComp" />
+
+    <TextView
+        android:id="@+id/tvYou"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/you"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/ivYou"
+        app:layout_constraintTop_toBottomOf="@id/ivYou"
+        app:layout_constraintStart_toStartOf="@id/ivYou" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
