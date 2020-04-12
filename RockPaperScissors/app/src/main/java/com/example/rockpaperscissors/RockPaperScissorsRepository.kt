@@ -13,7 +13,7 @@ class RockPaperScissorsRepository (context: Context) {
 
     init {
         val database = RockPaperScissorsRoomDatabase.getDatabase(context)
-        rpsDao = database!!.rpsDao()
+        rpsDao = database!!.RockPaperScissorsDao()
     }
 
     suspend fun getAllGames(): List<RockPaperScissorsTable> = rpsDao.getAllGames()
@@ -21,5 +21,4 @@ class RockPaperScissorsRepository (context: Context) {
     suspend fun insertGame(rockPaperScissorsTable: RockPaperScissorsTable) = rpsDao.insertGame(rockPaperScissorsTable)
 
     suspend fun deleteAllGames() = rpsDao.deleteAllGames()
-
 }
