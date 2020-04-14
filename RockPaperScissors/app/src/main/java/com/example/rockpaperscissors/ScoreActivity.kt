@@ -26,6 +26,8 @@ class ScoreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score)
+
+        //This line of code will enable a back button to let you go back to the main page
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         rpsRepo = RockPaperScissorsRepository(this)

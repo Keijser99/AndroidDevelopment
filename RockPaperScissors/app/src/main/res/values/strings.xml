@@ -23,4 +23,9 @@
     <string name="action_gotogamehistory">action_goToGameHistory</string>
     <string name="gamehistory">gameHistory</string>
     <string name="Menu" />
+
+    <!--Strings for the Main Activity-->
+    <string name="Draw">Draw!</string>
+    <string name="youLose">You lose!</string>
+    <string name="youWin">You win!</string>
 </resources>

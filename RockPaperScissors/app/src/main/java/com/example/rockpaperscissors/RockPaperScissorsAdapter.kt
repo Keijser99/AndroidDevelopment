@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.score.view.*
 
+//handles everything that happens in the RecyclerView
 class RockPaperScissorsAdapter(private val rpsList: List<RockPaperScissorsTable>) : RecyclerView.Adapter<RockPaperScissorsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

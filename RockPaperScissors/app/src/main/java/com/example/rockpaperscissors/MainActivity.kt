@@ -51,21 +51,21 @@ class MainActivity : AppCompatActivity() {
         ivYou.setImageResource(R.drawable.rock)
         yourChoice = 1
         computerTurn()
-        showResults(computersChoice,yourChoice)
+        showResults(yourChoice,computersChoice)
     }
 
     private fun choosePaper() {
         ivYou.setImageResource(R.drawable.paper)
         yourChoice = 2
         computerTurn()
-        showResults(computersChoice,yourChoice)
+        showResults(yourChoice,computersChoice)
     }
 
     private fun chooseScissors() {
         ivYou.setImageResource(R.drawable.scissors)
         yourChoice = 3
         computerTurn()
-        showResults(computersChoice,yourChoice)
+        showResults(yourChoice,computersChoice)
     }
 
     //This function sets the random choices for the computer
@@ -79,7 +79,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     //This function calculates the result of 1 round of the game
-    @SuppressLint("SetTextI18n")
     private fun showResults(yourMove : Int, compMove : Int) {
 
         //Same move
