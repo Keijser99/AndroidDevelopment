@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     //    private lateinit var reminderRepository: ReminderRepository
     private val viewModel: MainActivityViewModel by viewModels()
 
+    private lateinit var viewManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
